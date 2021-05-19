@@ -8,7 +8,7 @@
 * A database or files that store data (data = objects)
 * An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)rimester as well as learni  ng a few new concepts as we work on this project.
 
-![](https://happilyevertravels.com/wp-content/uploads/2021/02/airbnb4.jpg)
+![](https://images-na.ssl-images-amazon.com/images/I/91YRBwPbutL.png)
 
 ## Requirements
 
