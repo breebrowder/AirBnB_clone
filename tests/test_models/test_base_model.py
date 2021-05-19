@@ -19,7 +19,14 @@ for key in my_model_json.keys():
                                  my_model_json[key]))
 
 bm = BaseModel()
+bm.to_dict()
+print(type(bm.updated_at))
+
+bm = BaseModel()
 bm.save()
 print(type(bm.updated_at))
-d_json = bm.to_dict()
-print(type(d_json['updated_at']))
+
+bm = BaseModel()
+bm.__str__(self)
+return("[{}] ({}) {}".format(self.__class__.__name__,
+                                        self.id, self.__dict__))
