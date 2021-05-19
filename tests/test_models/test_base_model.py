@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
+import unittest
+
 
 my_model = BaseModel()
 my_model.name = "Holberton"
@@ -15,3 +17,9 @@ for key in my_model_json.keys():
         "\t{}: ({}) - {}".format(key,
                                  type(my_model_json[key]),
                                  my_model_json[key]))
+
+bm = BaseModel()
+bm.save()
+print(type(bm.updated_at))
+d_json = bm.to_dict()
+print(type(d_json['updated_at']))
