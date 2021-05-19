@@ -2,11 +2,13 @@
 
 ## Description
 
-### Complete a clone of the AirBnB web application, composed of:
+#### Tasked to us by Holberton School, we will complete a clone of the AirBnB web application, composed of:
 * A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
 * A website (the front-end) that shows the final product to everybody: static and dynamic
 * A database or files that store data (data = objects)
 * An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)rimester as well as learni  ng a few new concepts as we work on this project.
+
+Note: The command interpreter must be able to repeatedly issue a prompt, accept input, parse an initial prefix off the received input, and dispatch toaction methods, passing them the remainder of the line as argument.
 
 ![](https://images-na.ssl-images-amazon.com/images/I/91YRBwPbutL.png)
 
@@ -88,6 +90,15 @@ All tests should also pass in non-interactive mode:
 ~~~~~~
 $ echo "python3 -m unittest discover tests" | bash
 ~~~~~~
+
+#### FUNCTIONS OF THE CONSOLE(CLI)
+* Create a new object (ex: a new User or a new Place)
+* Retrieve an object from a file, a database etc…
+* Do operations on objects (count, compute stats, etc…)
+* Update attributes of an object
+* Destroy an object
+
+![Flowchart](https://imgur.com/3rCP5Fx.png)
 
 ### Resources
 
