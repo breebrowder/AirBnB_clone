@@ -21,7 +21,7 @@ class BaseModel:
 
     def to_dict(self):
         self.created_at = datetime.now().isoformat()
-        return cls.__dict__
+        return self.__dict__
 
     def __str__(self):
            return("[{}] ({}) {}".format(self.__class__.__name__,
