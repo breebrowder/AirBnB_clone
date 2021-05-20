@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-""" This module is to create first class of base"""
-import uuid
+""" This module is to create the first class of Base """
+from uuid import uuid4
 from datetime import datetime
+import models
 
 
 class BaseModel:
-    """This class is for the BaseModel"""
+    """ This class is for the BaseModel """
 
     def __init__(self, *args, **kwargs):
 
+        self.id = str(uuid4())
         self.created_at = datetime.now()
-        self.updated_at = self.created_at
-        self.id = str(uuid.uuid4())
+        self.updated_at = datetime.now()
 
         if len(kwargs) > 0:
             conversion = ["created_at", "updated_at"]
@@ -26,21 +27,25 @@ class BaseModel:
                 else:
                     models.storage.new(self)
 
-    def save(self):
-        """updates updated_at with the current datetime"""
-
-        return self.updated_at
-
     def to_dict(self):
-        """returns a dictionary containing all keys/values of __dict__"""
-
-        self.created_at = datetime.now().isoformat()
-        self.updated_at = datetime.now().isoformat()
-        self.__dict__.update({'__class__' : self.__class__.__name__})
-        return self.__dict__
+        """ returns a dictionary containing all keys/values of __dict__ """
+        theDict = self.__dict__
+        strinDict = {}
+        for key, value in theDict.items():
+            if isinstance(value, datetime):
+                strinDict[key] = value.strftime("%Y-%m-%dT%H:%M:%S.%f")
+            else:
+                strinDict[key] = value
+        strinDict["__class__"] = self.__class__.__name__
+        return strinDict
 
     def __str__(self):
-        """Prints information in specified format"""
+        """ Will return string form of Class """
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
+                                      self.id, self.__dict__))
 
-        return("[{}] ({}) {}".format(self.__class__.__name__,
-                                        self.id, self.__dict__))
+    def save(self):
+        """ update an attribute with current datetime """
+        self.updated_at = datetime.now()
+        models.storage.new(self)
+        models.storage.save()
