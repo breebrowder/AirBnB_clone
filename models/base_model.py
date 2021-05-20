@@ -13,8 +13,18 @@ class BaseModel:
         self.updated_at = self.created_at
         self.id = str(uuid.uuid4())
 
-        if kwargs is not ():
-            pass
+        if len(kwargs) > 0:
+            conversion = ["created_at", "updated_at"]
+            for key, value in kwargs.items():
+                if key in conversion:
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key == "__class__":
+                    continue
+                else:
+                    setattr(self, key, value)
+                else:
+                    models.storage.new(self)
 
     def save(self):
         """updates updated_at with the current datetime"""
