@@ -24,8 +24,8 @@ class BaseModel:
                     continue
                 else:
                     setattr(self, key, value)
-                else:
-                    models.storage.new(self)
+            else:
+                models.storage.new(self)
 
     def to_dict(self):
         """ returns a dictionary containing all keys/values of __dict__ """
