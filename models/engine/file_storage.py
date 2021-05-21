@@ -3,6 +3,12 @@
 """ In this module we will create a class to manage File Storage """
 
 from models import BaseModel
+from models.city import City
+from models.user import User
+from models.state import State
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 import json
 from os import path
 
@@ -12,6 +18,13 @@ class FileStorage:
 
     __file_path = 'file.json'
     __objects = {}
+    classes = {"BaseModel": BaseModel,
+               "City": City,
+               "User": User,
+               "State": State,
+               "Place": Place,
+               "Amenity": Amenity,
+               "Review": Review}
 
     def all(self):
         """ Returns the dict __objects """
