@@ -24,6 +24,8 @@ class BaseModel:
                     continue
                 else:
                     setattr(self, key, value)
+        else:
+            models.storage.new(self)
 
     def to_dict(self):
         """ returns a dictionary containing all keys/values of __dict__ """
@@ -45,4 +47,5 @@ class BaseModel:
     def save(self):
         """ update an attribute with current datetime """
         self.updated_at = datetime.now()
-        
+        models.storage.new(self)
+        models.storage.save()
