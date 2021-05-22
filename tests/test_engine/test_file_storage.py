@@ -16,10 +16,10 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         bm1.save()
         self.assertNotEqual(os.path.getsize(fs._FileStorage__file_path), 0)
-    def test_filestorage_new(self):
+    def test_file_storage_new(self):
         bm1 = BaseModel()
         self.assertNotEqual(len(fs._FileStorage__objects), 0)
-    def test_filestorage_all(self):
+    def test_file_storage_all(self):
         bm1 = BaseModel()
         self.assertIsInstance(fs.all(), dict)
     def test_file_storage(self):
@@ -33,3 +33,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(bm1.my_number, 69)
         fs.reload()
         self.assertNotEqual(new, fs._FileStorage__objects)
+
+    def test_file_storage_objects(self):
+        bm1 = FileStorage()
+        self.assertIsInstance(fs._FileStorage__objects, dict)
