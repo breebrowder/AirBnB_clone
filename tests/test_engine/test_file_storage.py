@@ -23,8 +23,13 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         self.assertIsInstance(fs.all(), dict)
     def test_file_storage(self):
+        if os.path.exists(fs._FileStorage__file_path):
+            os.remove(fs._FileStorage__file_path)
         bm1 = BaseModel()
         bm1.save()
         fs.reload()
+        new = fs._FileStorage__objects.copy()
         bm1.my_number = 69
         self.assertEqual(bm1.my_number, 69)
+        fs.reload()
+        self.assertNotEqual(new, fs._FileStorage__objects)
