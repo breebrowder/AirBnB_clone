@@ -16,7 +16,7 @@ class TestBaseModel(unittest.TestCase):
         bm1 = BaseModel()
         bm1.save()
         self.assertNotEqual(os.path.getsize(fs._FileStorage__file_path), 0)
-    def test_file_storage_new(self):
+    def test_filestorage_new(self):
         bm1 = BaseModel()
         self.assertNotEqual(len(fs._FileStorage__objects), 0)
     def test_file_storage_all(self):
@@ -37,3 +37,6 @@ class TestBaseModel(unittest.TestCase):
     def test_file_storage_objects(self):
         bm1 = FileStorage()
         self.assertIsInstance(fs._FileStorage__objects, dict)
+
+if __name__ == '__main__':
+    unittest.main
