@@ -115,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(space_arg) < 3:
             print("** attribute name missing **")
         elif len(space_arg) < 4:
-            print("** attribute name missing **")
+            print("** value missing **")
         else:
             obj = models.storage.all().get(space_arg[0] + '.' + space_arg[1])
             setattr(obj, space_arg[2], space_arg[3][1:-1])
