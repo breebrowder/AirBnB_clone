@@ -89,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
         if line == "":
             for key, value in models.storage.all().items():
                 arg = str(value)
-                str_list.append(string)
+                str_list.append(arg)
             print(str_list)
         elif space_arg[0] not in HBNBCommand.classes.keys():
             print("** class doesn't exist **")
@@ -114,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         elif len(space_arg) < 3:
             print("** attribute name missing **")
-        elif (space_arg) < 4:
+        elif len(space_arg) < 4:
             print("** attribute name missing **")
         else:
             obj = models.storage.all().get(space_arg[0] + '.' + space_arg[1])
