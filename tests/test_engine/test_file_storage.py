@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 
 
 fs = FileStorage()
-class TestBaseModel(unittest.TestCase):
+class TestFileStorage(unittest.TestCase):
     """A class to test BaseModel & File storage"""
     def test_filestorage_save(self):
         if os.path.exists(fs._FileStorage__file_path):
@@ -39,4 +39,4 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(fs._FileStorage__objects, dict)
 
 if __name__ == '__main__':
-    unittest.main
+    unittest.main()
