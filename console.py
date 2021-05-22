@@ -58,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(space_arg) < 2:
             print("** instance id missing **")
         elif space_arg[0] + '.' + space_arg[1] not in \
-             models.storage.all().keys():
+                models.storage.all().keys():
             print("** no instance found **")
         else:
             obj = models.storage.all().get(space_arg[0] + '.' + space_arg[1])
@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(space_arg) < 2:
             print("** instance id missing **")
         elif space_arg[0] + '.' + space_arg[1] not in \
-             models.storage.all().keys():
+                models.storage.all().keys():
             print("** no instance found **")
         else:
             models.storage.all().pop(space_arg[0] + '.' + space_arg[1], None)
