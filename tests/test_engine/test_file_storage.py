@@ -22,3 +22,9 @@ class TestBaseModel(unittest.TestCase):
     def test_filestorage_all(self):
         bm1 = BaseModel()
         self.assertIsInstance(fs.all(), dict)
+    def test_file_storage(self):
+        bm1 = BaseModel()
+        bm1.save()
+        fs.reload()
+        bm1.my_number = 69
+        self.assertEqual(bm1.my_number, 69)
