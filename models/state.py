@@ -2,9 +2,10 @@
 """ State Class that inherits from BaseModel """
 
 import json
+import models
 from models import BaseModel
 
 
-class State:
+class State(BaseModel):
     """ Inherited class """
-    pass
+    name = ""

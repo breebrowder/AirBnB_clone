@@ -5,6 +5,6 @@ import json
 from models import BaseModel
 
 
-class Amenity:
+class Amenity(BaseModel):
     """ Inherited class """
-    pass
+    name = ""

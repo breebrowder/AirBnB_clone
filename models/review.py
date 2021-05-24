@@ -5,6 +5,8 @@ import json
 from models import BaseModel
 
 
-class Review:
+class Review(BaseModel):
     """ Inherited class """
-    pass
+    place_id = ""
+    user_id = ""
+    text = ""
