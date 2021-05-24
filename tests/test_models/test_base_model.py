@@ -11,14 +11,15 @@ class TestBaseModel(unittest.TestCase):
         bm = BaseModel()
         self.assertIsInstance(bm.id, str)
         self.assertIsInstance(bm.__str__(), str)
-        self.assertIsInstance(bm.to_dict(), dict)
+        self.assertTrue(len(bm.to_dict()) > 0)
         self.assertIsInstance(bm.created_at, datetime)
         self.assertIsInstance(bm.updated_at, datetime)
 
     def testbasemodel_save(self):
         bm = BaseModel()
+        bm1 = bm.updated_at
         bm.save()
-        self.assertTrue(type(bm.updated_at))
+        self.assertNotEqual(bm1, bm.updated_at)
 
 if __name__ == '__main__':
     unittest.main()
