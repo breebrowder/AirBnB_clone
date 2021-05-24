@@ -2,6 +2,7 @@
 from models.base_model import BaseModel
 import unittest
 from datetime import datetime
+import os
 
 
 class TestBaseModel(unittest.TestCase):
@@ -20,6 +21,13 @@ class TestBaseModel(unittest.TestCase):
         bm1 = bm.updated_at
         bm.save()
         self.assertNotEqual(bm1, bm.updated_at)
+
+    def test_basemodel_newsave(self):
+        bm = BaseModel()
+        if os.path.exists("file.json"):
+            os.remove("file.json")
+        bm.save()
+        self.assertTrue(os.path.exists("file.json"))
 
 if __name__ == '__main__':
     unittest.main()
