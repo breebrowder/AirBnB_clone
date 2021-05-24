@@ -24,13 +24,6 @@ class HBNBCommand(cmd.Cmd):
                "Amenity": Amenity,
                "Review": Review}
 
-    def default(self, line):
-        """ Evaluates input """
-        try:
-            self.onecmd(eval(line))
-        except:
-            print("*** Unknown syntax: {}".format(line))
-
     def emptyline(self):
         """ Do nothing """
         pass
@@ -42,18 +35,6 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, line):
         """ exits at EOF """
         return True
-
-    def do_count(self, line):
-        """ Counting number of inst in a class """
-        if line not in HBNBCommand.classes.keys():
-            print("** class doesn't exist **")
-        else:
-            theDict_ = models.storage.all()
-            total = 0
-            for key, value in theDict_.items():
-                if value .__class__.__name__ == line:
-                    total = total + 1
-            print(total)
 
     def do_create(self, line):
         """ create new inst of BaseModel, save to the JSON file, prints ID """
