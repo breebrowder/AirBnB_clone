@@ -14,4 +14,7 @@ class TestReview(unittest.TestCase):
         usr1 = Review()
         self.assertIsInstance(usr1.place_id, str)
         self.assertIsInstance(usr1.user_id, str)
-        self.assertIsInstance(usr1.text str)
+        self.assertIsInstance(usr1.text, str)
+
+if __name__ == '__main__':
+    unittest.main()

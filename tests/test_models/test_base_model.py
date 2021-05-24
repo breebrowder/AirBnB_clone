@@ -1,32 +1,24 @@
 #!/usr/bin/python3
 from models.base_model import BaseModel
 import unittest
+from datetime import datetime
 
 
-my_model = BaseModel()
-my_model.name = "Holberton"
-my_model.my_number = 89
-print(my_model)
-my_model.save()
-print(my_model)
-my_model_json = my_model.to_dict()
-print(my_model_json)
-print("JSON of my_model:")
-for key in my_model_json.keys():
-    print(
-        "\t{}: ({}) - {}".format(key,
-                                 type(my_model_json[key]),
-                                 my_model_json[key]))
+class TestBaseModel(unittest.TestCase):
+    """This class test Basemodel with unittest"""
 
-bm = BaseModel()
-bm.to_dict()
-print(type(bm.updated_at))
+    def test_basemodel(self):
+        bm = BaseModel()
+        self.assertIsInstance(bm.id, str)
+        self.assertIsInstance(bm.__str__(), str)
+        self.assertIsInstance(bm.to_dict(), dict)
+        self.assertIsInstance(bm.created_at, datetime)
+        self.assertIsInstance(bm.updated_at, datetime)
 
-bm = BaseModel()
-bm.save()
-print(type(bm.updated_at))
+    def testbasemodel_save(self):
+        bm = BaseModel()
+        bm.save()
+        self.assertTrue(type(bm.updated_at))
 
-bm = BaseModel()
-bm.__str__(self)
-return("[{}] ({}) {}".format(self.__class__.__name__,
-                                        self.id, self.__dict__))
+if __name__ == '__main__':
+    unittest.main()
