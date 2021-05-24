@@ -5,6 +5,7 @@ import json
 from models import BaseModel
 
 
-class City:
+class City(BaseModel):
     """ Inherited class """
-    pass
+    state_id = ""
+    name = ""
