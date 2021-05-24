@@ -43,6 +43,18 @@ class HBNBCommand(cmd.Cmd):
         """ exits at EOF """
         return True
 
+    def do_count(self, line):
+        """ Counting number of inst in a class """
+        if line not in HBNBCommand.classes.keys():
+            print("** class doesn't exist **")
+        else:
+            theDict_ = models.storage.all()
+            total = 0
+            for key, value in theDict_.items():
+                if value .__class__.__name__ == line:
+                    total = total + 1
+            print(total)
+
     def do_create(self, line):
         """ create new inst of BaseModel, save to the JSON file, prints ID """
         if line:
