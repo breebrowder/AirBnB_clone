@@ -24,13 +24,6 @@ class HBNBCommand(cmd.Cmd):
                "Amenity": Amenity,
                "Review": Review}
 
-    def default(self, line):
-        """ Evaluates input """
-        try:
-            self.onecmd(eval(line))
-        except:
-            print("*** Unknown syntax: {}".format(line))
-
     def emptyline(self):
         """ Do nothing """
         pass
