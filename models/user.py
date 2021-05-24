@@ -5,6 +5,9 @@ import json
 from models import BaseModel
 
 
-class User:
+class User(BaseModel):
     """ Inherited class """
-    pass
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
