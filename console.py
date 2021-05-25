@@ -14,7 +14,7 @@ from models.review import Review
 
 class HBNBCommand(cmd.Cmd):
     """ This is our console """
-
+    count = 0
     prompt = '(hbnb)'
     classes = {"BaseModel": BaseModel,
                "City": City,
@@ -38,6 +38,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, line):
         """ create new inst of BaseModel, save to the JSON file, prints ID """
+        count += 1
         if line:
             if line in HBNBCommand.classes:
                 cls_to_ins = HBNBCommand.classes.get(line)
@@ -67,6 +68,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """  Deletes an instance based on the class name and id """
+        count -= 1
         space_arg = line.split(' ')
         if line == "":
             print("** class name missing **")
