@@ -15,7 +15,7 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """ This is our console """
     count = 0
-    prompt = '(hbnb)'
+    prompt = '(hbnb) '
     classes = {"BaseModel": BaseModel,
                "City": City,
                "User": User,
@@ -45,6 +45,8 @@ class HBNBCommand(cmd.Cmd):
                     if args[0] == keys.split(".")[0]:
                         count += 1
                 print(count)
+            if args[1][:3] == "all":
+                self.do_all(args[0])
         else:
             print('*** Unknown syntax:', line)
 
