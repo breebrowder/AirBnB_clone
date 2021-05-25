@@ -36,6 +36,18 @@ class HBNBCommand(cmd.Cmd):
         """ exits at EOF """
         return True
 
+    def default(self, line):
+        count = 0
+        args = line.split(".", 1)
+        if args[0] in self.classes.keys():
+            if args[1][:5] == "count":
+                for keys in models.storage.all():
+                    if args[0] == keys.split(".")[0]:
+                        count += 1
+                print(count)
+        else:
+            print('*** Unknown syntax:', line)
+
     def do_create(self, line):
         """ create new inst of BaseModel, save to the JSON file, prints ID """
         if line:
