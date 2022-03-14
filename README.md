@@ -113,11 +113,25 @@ $ echo "python3 -m unittest discover tests" | bash
 * [args/kwargs](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
 * [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
 
-### Contributors
+## Contributors
 
-1. Bree Browder - 2372@holbertonschool.com
-3. Nikki Edmonds - 2495@holbertonschool.com
+1. Bree Browder - [GitHub](https://github.com/breebrowder)
+3. Nikki Edmonds - [GitHub](https://github.com/NikkiE-Holberton)
 
-```
-Project Due Date: May 25, 2021
-```
+## About the Developer  💬
+
+### Bree Browder
+
+Bree is known for her creativity, organization, and self awareness. Advances in technology have played an integral part in her life. As an empathy-driven problem solver, Bree wants to be at the forefront of design for products, and to continuously design with others in mind, especially those who tend to be marginalized or forgotten.
+
+### Follow Me
+
+- 📁 [LinkedIn](https://www.linkedin.com/in/breebrowder/)
+- ✍️ [Medium](https://medium.com/@breebrowder)
+- 🖥️ [Portfolio Website](https://breebrowder.github.io)
+
+### Email Me
+📩: browder.bree@gmail.com
+
+
+#### Please Note: Some links may be internal and inaccessible to the general public outside of Holberton School students.
