@@ -1,9 +1,9 @@
-# AirBnB Clone Group Project- Cohort 14
+# AirBnB Clone - The Console, Web Static
 
 ## Description
 
-[Project Link: The Console](https://intranet.hbtn.io/projects/263)
-[Project Link: Web Static](https://intranet.hbtn.io/projects/268)
+1. [Project Link: The Console](https://intranet.hbtn.io/projects/263)
+2. [Project Link: Web Static](https://intranet.hbtn.io/projects/268)
 
 #### Tasked to us by Holberton School, we will complete a clone of the AirBnB web application, composed of:
 * A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
