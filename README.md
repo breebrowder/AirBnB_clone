@@ -2,6 +2,9 @@
 
 ## Description
 
+[Project Link: The Console](https://intranet.hbtn.io/projects/263)
+[Project Link: Web Static](https://intranet.hbtn.io/projects/268)
+
 #### Tasked to us by Holberton School, we will complete a clone of the AirBnB web application, composed of:
 * A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
 * A website (the front-end) that shows the final product to everybody: static and dynamic
@@ -116,7 +119,7 @@ $ echo "python3 -m unittest discover tests" | bash
 ## Contributors
 
 1. Bree Browder - [GitHub](https://github.com/breebrowder)
-3. Nikki Edmonds - [GitHub](https://github.com/NikkiE-Holberton)
+2. Nikki Edmonds - [GitHub](https://github.com/NikkiE-Holberton)
 
 ## About the Developer  💬
 
